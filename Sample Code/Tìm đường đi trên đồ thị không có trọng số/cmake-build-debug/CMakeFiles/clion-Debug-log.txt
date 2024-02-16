@@ -1,0 +1,34 @@
+C:\Users\Admin\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/Users/Admin/AppData/Local/Programs/CLion/bin/ninja/win/x64/ninja.exe -G Ninja -S "C:\Coding\Algorithms\Algorithms_Sem2\Sample Code\Tìm đường đi trên đồ thị không có trọng số" -B "C:\Coding\Algorithms\Algorithms_Sem2\Sample Code\Tìm đường đi trên đồ thị không có trọng số\cmake-build-debug"
+-- The C compiler identification is GNU 13.1.0
+-- The CXX compiler identification is GNU 13.1.0
+-- Detecting C compiler ABI info
+CMake Error:
+  Running
+
+   'C:/Users/Admin/AppData/Local/Programs/CLion/bin/ninja/win/x64/ninja.exe' '-C' 'C:/Coding/Algorithms/Algorithms_Sem2/Sample Code/Tìm đường đi trên đồ thị không có trọng số/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ghq058' '-t' 'recompact'
+
+  failed with:
+
+   ninja: fatal: chdir to 'C:/Coding/Algorithms/Algorithms_Sem2/Sample Code/T∞m du?ng di trΩn d? th? kh⌠ng c≤ tr?ng s?/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ghq058' - Invalid argument
+
+
+
+CMake Error:
+  Running
+
+   'C:/Users/Admin/AppData/Local/Programs/CLion/bin/ninja/win/x64/ninja.exe' '-C' 'C:/Coding/Algorithms/Algorithms_Sem2/Sample Code/Tìm đường đi trên đồ thị không có trọng số/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ghq058' '-t' 'restat' 'build.ninja'
+
+  failed with:
+
+   ninja: fatal: chdir to 'C:/Coding/Algorithms/Algorithms_Sem2/Sample Code/T∞m du?ng di trΩn d? th? kh⌠ng c≤ tr?ng s?/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ghq058' - Invalid argument
+
+
+
+CMake Error at C:/Users/Admin/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile):
+  Failed to generate test project build system.
+Call Stack (most recent call first):
+  C:/Users/Admin/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)
+  CMakeLists.txt:2 (project)
+
+
+-- Configuring incomplete, errors occurred!
