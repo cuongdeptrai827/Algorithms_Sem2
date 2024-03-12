@@ -1,71 +1,98 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
 using namespace std;
 
-// Định nghĩa cấu trúc Đỉnh
-struct Vertex {
-    int parent; // Số nhà mà đỉnh này thuộc về
-    vector<int> neighbors; // Các đỉnh kề
-};
+vector<vector<int>> adj, adj_rev;
+vector<bool> used;
+vector<int> order, component;
 
-// Hàm tìm gốc của cây
-int findRoot(vector<Vertex> &graph, int vertex) {
-    if (graph[vertex].parent != vertex) {
-        graph[vertex].parent = findRoot(graph, graph[vertex].parent);
-    }
-    return graph[vertex].parent;
+void dfs1(int v) {
+    used[v] = true;
+
+    for (auto u : adj[v])
+        if (!used[u])
+            dfs1(u);
+
+    order.push_back(v);
+}
+
+void dfs2(int v) {
+    used[v] = true;
+    component.push_back(v);
+
+    for (auto u : adj_rev[v])
+        if (!used[u])
+            dfs2(u);
 }
 
 int main() {
-    int N, M;
-    cin >> N >> M;
+    int n, m;
+    cin >> n >> m;
 
-    // Khởi tạo đồ thị
-    vector<Vertex> graph(N + 1);
-    for (int i = 1; i <= N; ++i) {
-        graph[i].parent = i; // Gốc ban đầu của mỗi cây là chính nó
-    }
+    adj.resize(n + 1); // Resize to n+1, as indexing starts from 1
+    adj_rev.resize(n + 1); // Resize to n+1, as indexing starts from 1
+    used.assign(n + 1, false);
 
-    // Đọc các cạnh và thêm vào đồ thị
-    for (int i = 0; i < M; ++i) {
+    for (int i = 0; i < m; ++i) {
         int a, b;
         cin >> a >> b;
-        graph[a].neighbors.push_back(b);
-        graph[b].neighbors.push_back(a);
-
-        // Nếu a và b thuộc các cây khác nhau thì nối chúng lại với nhau
-        int root_a = findRoot(graph, a);
-        int root_b = findRoot(graph, b);
-        if (root_a != root_b) {
-            graph[root_b].parent = root_a;
-        }
+        adj[a].push_back(b);
+        adj_rev[b].push_back(a);
     }
 
-    // Đếm số lượng cây và số lượng cạnh giữa các cây
-    int numTrees = 0;
-    int numEdges = 0;
-    for (int i = 1; i <= N; ++i) {
-        if (graph[i].parent == i) {
-            numTrees++;
-            numEdges += graph[i].neighbors.size();
+    for (int i = 1; i <= n; ++i)
+        if (!used[i])
+            dfs1(i);
+
+    used.assign(n + 1, false);
+    reverse(order.begin(), order.end());
+
+    int num_components = 0;
+    for (auto v : order)
+        if (!used[v]) {
+            dfs2(v);
+            ++num_components;
+
+            component.clear();
         }
-    }
 
-    // Số cạnh giữa các cây được tính mỗi cạnh 2 lần, nên chia đôi
-    numEdges /= 2;
+    vector<int> roots(n + 1, 0);
+    vector<int> root_nodes;
 
-    // In kết quả
-    cout << numTrees << " " << numEdges << endl;
+    for (auto v : order)
+        if (!used[v]) {
+            dfs2(v);
 
-    // Duyệt qua các đỉnh, tìm gốc của cây mà đỉnh đó thuộc về
-    // và in ra cặp (gốc cây, gốc cây kề)
-    for (int i = 1; i <= N; ++i) {
-        if (graph[i].parent == i) {
-            for (int j : graph[i].neighbors) {
-                int root_j = findRoot(graph, j);
-                cout << i << " " << root_j << endl;
-            }
+            int root = component.front();
+            for (auto u : component) roots[u] = root;
+            root_nodes.push_back(root);
+
+            component.clear();
         }
-    }
+
+    vector<vector<int>> adj_scc(n + 1);
+
+    for (int v = 1; v <= n; ++v)
+        for (auto u : adj[v]) {
+            int root_v = roots[v],
+                    root_u = roots[u];
+
+            if (root_u != root_v)
+                adj_scc[root_v].push_back(root_u);
+        }
+
+    int num_edges_between_scc = 0;
+    for (int i = 1; i <= n; ++i)
+        for (auto j : adj_scc[i])
+            ++num_edges_between_scc;
+
+    cout << num_components << " " << num_edges_between_scc << endl;
+
+    for (int i = 1; i <= n; ++i)
+        for (auto j : adj_scc[i])
+            cout << i << " " << j << endl;
 
     return 0;
 }
