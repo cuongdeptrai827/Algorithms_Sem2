@@ -1,3 +1,3 @@
-C:\Users\nguye\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E rm -f CMakeFiles\Topological_Sorting.dir/objects.a
-C:\Users\nguye\AppData\Local\Programs\CLion\bin\mingw\bin\ar.exe qc CMakeFiles\Topological_Sorting.dir/objects.a @CMakeFiles\Topological_Sorting.dir\objects1.rsp
-C:\Users\nguye\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\Topological_Sorting.dir/objects.a -Wl,--no-whole-archive -o Topological_Sorting.exe -Wl,--out-implib,libTopological_Sorting.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Topological_Sorting.dir\linkLibs.rsp
+C:\Users\Admin\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E rm -f CMakeFiles\Topological_Sorting.dir/objects.a
+C:\Users\Admin\AppData\Local\Programs\CLion\bin\mingw\bin\ar.exe qc CMakeFiles\Topological_Sorting.dir/objects.a @CMakeFiles\Topological_Sorting.dir\objects1.rsp
+C:\Users\Admin\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\Topological_Sorting.dir/objects.a -Wl,--no-whole-archive -o Topological_Sorting.exe -Wl,--out-implib,libTopological_Sorting.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Topological_Sorting.dir\linkLibs.rsp
