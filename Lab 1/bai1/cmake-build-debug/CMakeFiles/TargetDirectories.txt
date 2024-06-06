@@ -1,3 +1,0 @@
-C:/Coding/Algorithms/Algorithms_Sem2/Lab 1/bai1/cmake-build-debug/CMakeFiles/bai.dir
-C:/Coding/Algorithms/Algorithms_Sem2/Lab 1/bai1/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Coding/Algorithms/Algorithms_Sem2/Lab 1/bai1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
