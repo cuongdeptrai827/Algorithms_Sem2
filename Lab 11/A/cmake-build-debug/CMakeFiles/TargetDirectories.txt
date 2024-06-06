@@ -1,0 +1,3 @@
+C:/Coding/Môn Algorithms/Semester 2/Algorithms_Sem2/Lab 11/A/cmake-build-debug/CMakeFiles/A.dir
+C:/Coding/Môn Algorithms/Semester 2/Algorithms_Sem2/Lab 11/A/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Coding/Môn Algorithms/Semester 2/Algorithms_Sem2/Lab 11/A/cmake-build-debug/CMakeFiles/rebuild_cache.dir

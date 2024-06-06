@@ -1,0 +1,3 @@
+C:\Users\nguye\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E rm -f CMakeFiles\bai.dir/objects.a
+C:\Users\nguye\AppData\Local\Programs\CLion\bin\mingw\bin\ar.exe qc CMakeFiles\bai.dir/objects.a @CMakeFiles\bai.dir\objects1.rsp
+C:\Users\nguye\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\bai.dir/objects.a -Wl,--no-whole-archive -o bai.exe -Wl,--out-implib,libbai.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\bai.dir\linkLibs.rsp
